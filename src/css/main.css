@@ -325,6 +325,22 @@ nav img {
   outline: none;
 }
 
+.link-items {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* color: black; */
+  padding: 0.3rem .6rem;
+  border-bottom: 2px solid transparent;
+  /* transition: b  order-bottom 0.2s ease-out; */
+}
+
+.link-items:hover {
+  border-bottom: 2px solid ;
+  transition: border-bottom 0.2s ease-out;
+
+}
+
 @media screen and (min-width: 768px) {
   .toggle-btn {
     display: none;
@@ -345,7 +361,7 @@ nav img {
     color: #333333;
     font-weight: 400;
     /* letter-spacing: var(--spacing); */
-    /* transition: var(--transition); */
+    transition: var(--transition);
     /* padding: 0.5rem 0; */
     font-style: normal;
     font-weight: 400;
@@ -590,6 +606,8 @@ Hero
     line-height: 1;
   }
 }
+
+
 
 /*
 =============== 
@@ -1238,3 +1256,7 @@ Blog Template
   height: 15rem;
   margin: 3rem 0;
 }
+
+
+
+/* Testing grounds */

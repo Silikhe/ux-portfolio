@@ -10,6 +10,7 @@ export default () => {
   return (
     <Layout>
       <Hero />
+      <Projects/>
     </Layout>
   )
 }
