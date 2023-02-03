@@ -37,6 +37,16 @@ module.exports = {
         singleTypes: [],
       },
     },
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: `@silikhesilas`,
+        accessToken: `2aed049f7e6480c29aa975ac4176351c48b5e6566d4cb07ff4512d580be63f078
+
+
+        `,
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-webfonts`,
     //   options: {
@@ -52,4 +62,5 @@ module.exports = {
     //   },
     // },
   ],
+  
 }

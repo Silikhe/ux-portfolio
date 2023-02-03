@@ -44,9 +44,9 @@ const Hero = () => {
             </div>
           </div>
         </article>
-        <div className="image-info">
+        {/* <div className="image-info"> */}
           <Image fluid={fluid} className="hero-img" />
-        </div>
+        {/* </div> */}
       </div>
     </header>
   )
