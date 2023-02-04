@@ -20,23 +20,22 @@ const ProjectsPage = () => {
               alt=""
             />
           </div>
-
           <div className="case-basic-info">
-            <p className="">
+            <p className="article-subtitle">
               <span>Role:</span> Product Designer
             </p>
 
-            <p className="">
+            <p className="article-subtitle">
               <span>Role:</span> Product Designer
             </p>
-            <p className="">
+            <p className="article-subtitle">
               <span>Role:</span> Product Designer
             </p>
           </div>
           <div className="case-contribution">
             <div className="case-contribut">
-              <p>My individual contribution</p>
-              <p>
+              <p className="article-title">My individual contribution</p>
+              <p className="article-subtitle">
                 I was hired as the only designer on the team, working under the
                 product team, while also assisting in marketing design efforts.
                 I reported directly to the VP of product and the CEO (who was a
@@ -49,24 +48,78 @@ const ProjectsPage = () => {
             </div>
             <div className="case-skills">
               <div className="case-skill">
-                <p>User Research</p>
+                <p className="article-subtitle">User Research</p>
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
               </div>
               <div className="case-skill">
-                <p>User Research</p>
+                <p className="article-subtitle">User Research</p>
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
               </div>
               <div className="case-skill">
-                <p>User Research</p>
+                <p className="article-subtitle">User Research</p>
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="client-details">
+            <p>Client Details</p>
+            <div>
+              <p className="article-title">Understanding the company.</p>
+              <div className="case-contribution">
+                <div className="case-contribut">
+                  <div>
+                    <p className="article-title">About</p>
+                    <p className="article-subtitle">
+                      VacayBug is about authenticity and ease of exploration.
+                      Create a “Passport” and document your favorite trips and
+                      favorite spots along the way. Then share those insights
+                      and recommendations with others while searching for unique
+                      places to explore yourself.
+                    </p>
+                    <p className="article-title">Design Challenge</p>
+                    <p className="article-subtitle">
+                      VacayBug is about authenticity and ease of exploration.
+                      Create a “Passport” and document your favorite trips and
+                      favorite spots along the way. Then share those insights
+                      and recommendations with others while searching for unique
+                      places to explore yourself.
+                    </p>
+                  </div>
+                </div>
+                <div className="case-skills">
+                  <div className="case-skill">
+                    <p className="article-subtitle">User Research</p>
+                    <div class="progress-container"></div>
+                  </div>
+                  <div className="case-skill">
+                    <p className="article-subtitle">User Research</p>
+                    <div class="progress-container"></div>
+                  </div>
+                  <div className="case-skill">
+                    <p className="article-subtitle">User Research</p>
+                    <div class="progress-container"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="case-basic-info">
+            <p className="article-subtitle">
+              <span>Role:</span> Product Designer
+            </p>
+
+            <p className="article-subtitle">
+              <span>Role:</span> Product Designer
+            </p>
+            <p className="article-subtitle">
+              <span>Role:</span> Product Designer
+            </p>
           </div>
         </div>
       </div>

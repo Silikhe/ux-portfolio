@@ -1165,3 +1165,26 @@ Hero
 .case-basic-info p {
   /* width: 30%; */
 }
+
+.case-contribution {
+  display: flex;
+  justify-content: space-between;
+}
+
+.case-contribut {
+  width: 70%;
+}
+
+
+ .case-skills {
+  width:30%;
+  padding: 20px;
+}
+
+.case-basic-info p{
+  font-weight: 100 !important ;
+}
+
+.case-basic-info span{
+  font-weight: bold;
+}
