@@ -10,14 +10,54 @@ import Article from "../components/Article"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 import SingleProject from "../components/SingleProject"
-export default () => {
+import Projects from "../components/Projects"
+export default ({data}) => {
+
+
+
+  // const {allStrapiCaseStudies:{nodes:CaseStudies}}
   return (
     <Layout>
       <Hero />
-      <SingleProject/>
-      <Article/>
-      <Jobs/>
+      <SingleProject  />
+      <Article />
+      <Jobs />
+      <Projects/>
     </Layout>
   )
 }
-// ...GatsbyImageSharpFluid
+
+export const query = graphql`
+  {
+    allStrapiCaseStudies(filter: { featured: { eq: true } }) {
+      nodes {
+        id
+        project_name
+        theme
+        strapiId
+        short_description
+        company_logo {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        project_cover {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        contribution {
+          id
+          percentage
+          skill
+        }
+        context
+        featured
+      }
+    }
+  }
+`

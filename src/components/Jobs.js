@@ -33,7 +33,7 @@ const Jobs = () => {
           job_logo {
             childImageSharp {
               fluid {
-                src
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -77,7 +77,7 @@ const Jobs = () => {
     strapiId,
   } = jobs[value]
 
-  console.log(jobs[value])
+  // console.log(jobs[value])
 
   return (
     <>
@@ -121,10 +121,12 @@ const Jobs = () => {
                     <div>
                       <p className="article-subtitle">
                         Experience Length:
-                        <span>{diffMonths > 12 ? diffYears : diffMonths}</span>{" "}
+                        <span>
+                          {diffMonths > 12 ? diffYears : diffMonths}
+                        </span>{" "}
                         {diffMonths > 12 ? "Years" : "Months"}
                       </p>
-                    </div>  
+                    </div>
                     <div className="article-subtitle card-cartegory labels">
                       <p>Skills:</p>
                       {Skills.map(it => {
@@ -135,7 +137,6 @@ const Jobs = () => {
                           </div>
                         )
                       })}
-                      
                     </div>
                   </div>
                 </div>
