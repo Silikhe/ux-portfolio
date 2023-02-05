@@ -1,49 +1,145 @@
 import React from "react"
 import { AiOutlineCaretRight } from "react-icons/ai"
+import { graphql } from "gatsby"
+import { useStaticQuery } from "gatsby"
+import Image from "gatsby-image"
+import { Link } from "gatsby"
 
 export default function SingleProject() {
+  const query = graphql`
+    {
+      allStrapiCaseStudies {
+        nodes {
+          id
+          project_name
+          theme
+          strapiId
+          short_description
+          company_logo {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          project_cover {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          contribution {
+            id
+            percentage
+            skill
+          }
+          context
+          featured
+          topic
+          slug
+        }
+      }
+    }
+  `
+
+  const data = useStaticQuery(query)
+  const {
+    allStrapiCaseStudies: { nodes: CaseStudies },
+  } = data
+
+  const [value, setValue] = React.useState(0)
+  const {
+    id,
+    project_name,
+    theme,
+    strapiId,
+    short_description,
+    company_logo,
+    project_cover,
+    contribution,
+    context,
+    featured,
+    topic,
+    slug,
+  } = CaseStudies[value]
+
+  // console.log(CaseStudies)
+
   return (
-    <div className="project-container">
-      <div className="project">
-        <div className="project-header">
-          <p>BookMarked Projects</p>
-          <div className="divider"></div>
-        </div>
-        <div className="grid-container">
-          <div className="grid-project card">
-            <div className="project-content ">
-              <div className="card-header">
-                <p className="article-title">Regsco Decorators</p>
-                <div className="card-cartegory">
-                  <p className="date">UI DESING </p>
-                  <div className="dot"></div>
-                  <p className="date">2023</p>
-                </div>
-              </div>
-              <div className="card-body">
-                <p className="article-subtitle">
-                  Designing for impact, crafting innovative solutions from the
-                  heart of Nairobi, available for consulting and ready to
-                  elevate your user experience
-                </p>
-                <button className="btn btn-success">
-                  View Case Study
-                  <AiOutlineCaretRight />{" "}
-                </button>
-              </div>
-            </div>
-            <div className="project-image">
-              <img
-                src="https://assets-global.website-files.com/625816a3416990dd61391b9b/62d539610e8043b9e8937355_800.jpg"
-                alt="project cover"
-              />
-            </div>
+    <div>
+      {/* {CaseStudies.map((item, index) => {
+        return ( */}
+      <div className="project-container">
+        <div className="project">
+          <div className="project-header">
+            <p>BookMarked Projects</p>
+            <div className="divider"></div>
+          </div>
+          <div className="grid-container">
+            {CaseStudies.map((item, index) => {
+              return (
+                <Link>
+                  <div
+                    className="grid-project card"
+                    to={`/case-studies/${slug}`}
+                    key={id}
+                  >
+                    <div className="project-content ">
+                      <div className="card-header" key={index}>
+                        <p className="article-title">{item.project_name}</p>
+                        <div className="card-cartegory">
+                          <p className="date">{item.topic} </p>
+                          <div className="dot"></div>
+                          <p className="date">{item.context}</p>
+                        </div>
+                      </div>
+                      <div className="card-body">
+                        <p className="article-subtitle">
+                          {item.short_description}
+                          {/* {item.contribution.map(item => {
+                          return <div>{item.skill}</div>
+                        })} */}
+                        </p>
+                        <button
+                          className="btn"
+                          style={{ border: `${item.theme}` }}
+                        >
+                          View Case Study
+                          <AiOutlineCaretRight />{" "}
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      className="project-image"
+                      // style={{
+                      //   border: `${item.theme}`,
+                      //   cursor: "pointer",
+                      //   transition: "0.3s",
+                      //   "&:hover": {
+                      //     boxShadow: ` 7px 7px 3px 0px ${item.theme}`,
+                      //     border: `${item.theme}`,
+                      //   },
+                      // }}
+                    >
+                      <Image
+                        className="img"
+                        fluid={project_cover.childImageSharp.fluid}
+                      />
+                      {console.log(project_cover.childImageSharp.fluid)}
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          <div>
+            <button className="btn btn-project">view the archive</button>
           </div>
         </div>
-        <div>
-          <button className="btn btn-project">view the archive</button>
-        </div>
       </div>
+      {/* )
+      })} */}
     </div>
   )
 }

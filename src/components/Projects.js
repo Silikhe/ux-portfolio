@@ -46,9 +46,30 @@ const Projects = () => {
     allStrapiCaseStudies: { nodes: CaseStudies },
   } = data
 
-  console.log(CaseStudies);
+  const [value, setValue] = React.useState(0)
+  const {
+    project_name,
+    theme,
+    strapiId,
+    short_description,
+    company_logo,
+    project_cover,
+    contribution,
+    context,
+    featured,
+  } = CaseStudies[value]
 
-  return <h2>projects list</h2>
+  console.log(CaseStudies)
+
+  return (
+    <>
+      {CaseStudies.map((item, index) => {
+        return (
+          <h1 key={index}>{item.theme}</h1>
+        )
+      })}
+    </>
+  )
 }
 
 export default Projects
