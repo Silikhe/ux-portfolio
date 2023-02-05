@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Modal from "./Modal"
-import Tooltip from "./Toolpit"
+import Tooltip from "./ProgressBar"
 import { FiDownload } from "react-icons/fi"
 import { useStaticQuery } from "gatsby"
 

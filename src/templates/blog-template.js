@@ -2,6 +2,9 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
+import { duration } from "@material-ui/core"
+import ProgressBar from "../components/ProgressBar"
+import Image from "gatsby-image"
 
 const ComponentName = ({ data }) => {
   console.log(data)
@@ -18,6 +21,9 @@ const ComponentName = ({ data }) => {
     individual_contribution,
     role,
     contributors,
+    duration,
+    design_challenge,
+    case_study,
   } = data.caseStudy
   return (
     <Layout>
@@ -26,42 +32,52 @@ const ComponentName = ({ data }) => {
           <div class="case-bunner">
             <div class="burne-overlay">
               <div className="case-burner-item"></div>
-              <p className="artice-subtitle case-type">Passion Project</p>
-              <p className="article-title">Regsco Decorators</p>
+              <p className="artice-subtitle case-type">{project_type}</p>
+              <p className="article-title">{project_name}</p>
             </div>
-            <img
+            <Image
+              className="img"
+              fluid={project_cover.childImageSharp.fluid}
+            />
+            {/* <img
               src="https://invotech.co/blog/wp-content/uploads/2020/02/image_processing20200210-10615-9mhw3e-1200x675.png"
               alt=""
-            />
+            /> */}
           </div>
           <div className="case-basic-info">
             <p className="article-subtitle">
-              <span>Role:</span> Product Designer
+              <span>Role: </span> {role}
             </p>
 
             <p className="article-subtitle">
-              <span>Context:</span> Edu-Tech
+              <span>Context: </span>
+              {context}
             </p>
             <p className="article-subtitle">
-              <span>Duration:</span> Feb 2015 - Aug 2016
+              <span>Duration: </span>
+              {duration}
             </p>
           </div>
           <div className="case-contribution">
             <div className="case-contribut">
               <p className="article-title">My individual contribution</p>
-              <p className="article-subtitle">
-                I was hired as the only designer on the team, working under the
-                product team, while also assisting in marketing design efforts.
-                I reported directly to the VP of product and the CEO (who was a
-                design advocate). Being a part of a team where leadership was
-                built on the understanding that great design is important,
-                allowed me to create my best work. I was originally hired to
-                work on the marketing landing pages, banner ads and social media
-                collateral, but quickly moved into a product design role.
-              </p>
+              <p className="article-subtitle">{individual_contribution}</p>
             </div>
             <div className="case-skills">
-              <div className="case-skill">
+              {contribution.map(item => {
+                return (
+                  <div className="case-skill" key={item.id}>
+                    <div className="">
+                      <a className="article-subtitle">{item.skill}</a>
+                    </div>
+                    <div class="progress-container">
+                      <ProgressBar percentage={60} color={theme} />
+                      {/* <div class="progress-bar"></div> */}
+                    </div>
+                  </div>
+                )
+              })}
+              {/* <div className="case-skill">
                 <div className="">
                   <a className="article-subtitle">Navigate to website</a>
                 </div>
@@ -84,89 +100,74 @@ const ComponentName = ({ data }) => {
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="client-details">
-            <p>Client Details</p>
+            <p style={{ color: `${theme}` }}>Client Details</p>
             <div>
-              <p className="article-title">Understanding the company.</p>
+              <p className="article-title">
+                Understanding the<span>Client</span>.
+              </p>
               <div className="case-contribution">
                 <div className="case-contribut">
                   <div>
                     <p className="case-title">About</p>
-                    <p className="article-subtitle">
-                      VacayBug is about authenticity and ease of exploration.
-                      Create a “Passport” and document your favorite trips and
-                      favorite spots along the way. Then share those insights
-                      and recommendations with others while searching for unique
-                      places to explore yourself.
-                    </p>
+                    <p className="article-subtitle">{about_company}</p>
                     <p className="case-title">Design Challenge</p>
-                    <p className="article-subtitle">
-                      VacayBug is about authenticity and ease of exploration.
-                      Create a “Passport” and document your favorite trips and
-                      favorite spots along the way. Then share those insights
-                      and recommendations with others while searching for unique
-                      places to explore yourself.
-                    </p>
+                    <p className="article-subtitle">{design_challenge}</p>
                   </div>
                 </div>
                 <div className="case-skills">
                   <div className="case-img">
-                    <img
+                    {/* <img
                       src="https://moringaschool.com/wp-content/themes/moringa/public/images/logo.png"
                       alt="company logo"
+                    /> */}
+                    <Image
+                      className="img"
+                      fluid={company_logo.childImageSharp.fluid}
                     />
                   </div>
-                  <div className="case-company">
-                    <div className="case-link">
-                      <p className="">Website</p>
-                    </div>
-                    <div className="case-link">
-                      <a className="">Navigate to website</a>
-                    </div>
-                  </div>
-                  <div className="case-company">
-                    <div className="case-link">
-                      <p className="">Website</p>
-                    </div>
-                    <div className="case-link">
-                      <a className="">Navigate to website</a>
-                    </div>
-                  </div>
-                  <div className="case-company">
-                    <div className="case-link">
-                      <p className="">Website</p>
-                    </div>
-                    <div className="case-link">
-                      <a className="">Navigate to website</a>
-                    </div>
+                  <div>
+                    {company_link.map(item => {
+                      return (
+                        <div className="case-company" key={item.id}>
+                          <div className="case-link">
+                            <p className="">{item.link_name}</p>
+                          </div>
+                          <div className="case-link">
+                            <a href={item.url} className="">
+                              {item.link_holder}
+                            </a>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="case-basic-info">
-            <div className="case-contributer">
-              <h2>1</h2>
-              <p className="article-subtitle">User Research</p>
-            </div>
-            <div className="mid"></div>
-            <div className="case-contributer ">
-              <h2>1</h2>
-              <p className="article-subtitle">User Research</p>
-            </div>
-            <div className="mid"></div>
-
-            <div className="case-contributer">
-              <h2>1</h2>
-              <p className="article-subtitle">User Research</p>
-            </div>
+            {contributors.map(item => {
+              return (
+                <div className="case-contributer" key={item.id}>
+                  <h2>{item.percentage}</h2>
+                  <p className="article-subtitle">{item.skill}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
         <div className="case-study-main">
-          {/* <h1 className="case-h1">Case Study</h1> */}
+          <Image
+            fluid={case_study.childImageSharp.fluid}
+            quality={100}
+            className="img"
+            // resize={((width: "1000"), (height: 1000), (quality: 100))}
+            alt="your alt text"
+          />
           <img
             src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/0f43b9108902513.5fcfd248e34aa.jpg"
             alt=""
@@ -174,7 +175,6 @@ const ComponentName = ({ data }) => {
         </div>
       </div>
     </Layout>
-  
   )
 }
 
@@ -188,15 +188,15 @@ export const query = graphql`
       short_description
       company_logo {
         childImageSharp {
-          fluid {
-            src
+          fluid(maxWidth: 1080, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       project_cover {
         childImageSharp {
-          fluid {
-            src
+          fluid(maxWidth: 4080, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -209,6 +209,7 @@ export const query = graphql`
       featured
       about_company
       company_link {
+        link_holder
         link_name
         url
         id
@@ -220,6 +221,15 @@ export const query = graphql`
         id
         skill
         percentage
+      }
+      duration
+      design_challenge
+      case_study {
+        childImageSharp {
+          fluid(maxWidth: 5080, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   }
