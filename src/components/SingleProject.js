@@ -79,12 +79,8 @@ export default function SingleProject() {
           <div className="grid-container">
             {CaseStudies.map((item, index) => {
               return (
-                <Link>
-                  <div
-                    className="grid-project card"
-                    to={`/case-studies/${slug}`}
-                    key={id}
-                  >
+                <Link to={`/case-studies/${slug}`} key={id}>
+                  <div className="grid-project card">
                     <div className="project-content ">
                       <div className="card-header" key={index}>
                         <p className="article-title">{item.project_name}</p>
