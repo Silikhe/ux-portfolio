@@ -17,8 +17,6 @@ export default () => {
       <SingleProject/>
       <Article/>
       <Jobs/>
-      <Contact/>
-      <Footer/>
     </Layout>
   )
 }

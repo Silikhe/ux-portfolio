@@ -12,7 +12,7 @@ const ProjectsPage = () => {
           <div class="case-bunner">
             <div class="burne-overlay">
               <div className="case-burner-item"></div>
-              <p className="article-subtitle">Passion Project</p>
+              <p className="artice-subtitle case-type">Passion Project</p>
               <p className="article-title">Regsco Decorators</p>
             </div>
             <img
@@ -26,10 +26,10 @@ const ProjectsPage = () => {
             </p>
 
             <p className="article-subtitle">
-              <span>Role:</span> Product Designer
+              <span>Context:</span> Edu-Tech
             </p>
             <p className="article-subtitle">
-              <span>Role:</span> Product Designer
+              <span>Duration:</span> Feb 2015 - Aug 2016
             </p>
           </div>
           <div className="case-contribution">
@@ -48,19 +48,25 @@ const ProjectsPage = () => {
             </div>
             <div className="case-skills">
               <div className="case-skill">
-                <p className="article-subtitle">User Research</p>
+                <div className="">
+                  <a className="article-subtitle">Navigate to website</a>
+                </div>
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
               </div>
               <div className="case-skill">
-                <p className="article-subtitle">User Research</p>
+                <div className="">
+                  <a className="article-subtitle">Navigate to website</a>
+                </div>
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
               </div>
               <div className="case-skill">
-                <p className="article-subtitle">User Research</p>
+                <div className="">
+                  <a className="article-subtitle">Navigate to website</a>
+                </div>
                 <div class="progress-container">
                   <div class="progress-bar"></div>
                 </div>
@@ -74,7 +80,7 @@ const ProjectsPage = () => {
               <div className="case-contribution">
                 <div className="case-contribut">
                   <div>
-                    <p className="article-title">About</p>
+                    <p className="case-title">About</p>
                     <p className="article-subtitle">
                       VacayBug is about authenticity and ease of exploration.
                       Create a “Passport” and document your favorite trips and
@@ -82,7 +88,7 @@ const ProjectsPage = () => {
                       and recommendations with others while searching for unique
                       places to explore yourself.
                     </p>
-                    <p className="article-title">Design Challenge</p>
+                    <p className="case-title">Design Challenge</p>
                     <p className="article-subtitle">
                       VacayBug is about authenticity and ease of exploration.
                       Create a “Passport” and document your favorite trips and
@@ -93,34 +99,61 @@ const ProjectsPage = () => {
                   </div>
                 </div>
                 <div className="case-skills">
-                  <div className="case-skill">
-                    <p className="article-subtitle">User Research</p>
-                    <div class="progress-container"></div>
+                  <div className="case-img">
+                    <img
+                      src="https://moringaschool.com/wp-content/themes/moringa/public/images/logo.png"
+                      alt="company logo"
+                    />
                   </div>
-                  <div className="case-skill">
-                    <p className="article-subtitle">User Research</p>
-                    <div class="progress-container"></div>
+                  <div className="case-company">
+                    <div className="case-link">
+                      <p className="">Website</p>
+                    </div>
+                    <div className="case-link">
+                      <a className="">Navigate to website</a>
+                    </div>
                   </div>
-                  <div className="case-skill">
-                    <p className="article-subtitle">User Research</p>
-                    <div class="progress-container"></div>
+                  <div className="case-company">
+                    <div className="case-link">
+                      <p className="">Website</p>
+                    </div>
+                    <div className="case-link">
+                      <a className="">Navigate to website</a>
+                    </div>
+                  </div>
+                  <div className="case-company">
+                    <div className="case-link">
+                      <p className="">Website</p>
+                    </div>
+                    <div className="case-link">
+                      <a className="">Navigate to website</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="case-basic-info">
-            <p className="article-subtitle">
-              <span>Role:</span> Product Designer
-            </p>
+            <div className="case-contributer">
+              <h2>1</h2>
+              <p className="article-subtitle">User Research</p>
+            </div>
+            <div className="mid"></div>
+            <div className="case-contributer ">
+              <h2>1</h2>
+              <p className="article-subtitle">User Research</p>
+            </div>
+            <div className="mid"></div>
 
-            <p className="article-subtitle">
-              <span>Role:</span> Product Designer
-            </p>
-            <p className="article-subtitle">
-              <span>Role:</span> Product Designer
-            </p>
+            <div className="case-contributer">
+              <h2>1</h2>
+              <p className="article-subtitle">User Research</p>
+            </div>
           </div>
+        </div>
+        <div className="case-study-main">
+          {/* <h1 className="case-h1">Case Study</h1> */}
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/0f43b9108902513.5fcfd248e34aa.jpg" alt="" />
         </div>
       </div>
     </Layout>

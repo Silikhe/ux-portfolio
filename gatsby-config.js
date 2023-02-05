@@ -33,8 +33,8 @@ module.exports = {
         //   contentTypes : `jobs`, `projects`, `blogs`,
         //   singleType : `about`
         //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
-        contentTypes: [],
-        singleTypes: [],
+        contentTypes: [`jobs`, `case-studies`]
+        // singleTypes: [],
       },
     },
     {
@@ -42,8 +42,6 @@ module.exports = {
       options: {
         username: `@silikhesilas`,
         accessToken: `2aed049f7e6480c29aa975ac4176351c48b5e6566d4cb07ff4512d580be63f078
-
-
         `,
       },
     },
@@ -62,5 +60,4 @@ module.exports = {
     //   },
     // },
   ],
-  
 }
